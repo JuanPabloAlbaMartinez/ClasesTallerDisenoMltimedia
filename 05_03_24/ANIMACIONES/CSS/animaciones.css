@@ -1,0 +1,76 @@
+:root{
+    --color1: #fff;
+    --color2: #6495ed;
+    --color3: #989898;
+
+}
+
+.item{
+    width: 250px;
+    height: 60px;
+    background-color: var(--color1);
+    border: 2px solid var(--color2);
+    display: flex;
+    justify-content: center;
+    cursor: default;
+    transition-property: background-color, border-radius;
+    transition-duration: 2s;
+    transition-delay: 2s;
+    transition-timing-function: ease-in-out;
+}
+
+.item .titulo{
+    color: var(--color2);
+    transition: color 2s 2s;
+}
+
+.item:hover{
+    width: 350px;
+    border-radius: 26px;
+    background-color: var(--color2);
+    transition-property: background-color, border-radius, width;
+    transition-duration: 2s, 1s;
+    transition-delay: 0s;
+}
+
+.item:hover .titulo{
+    color: var(--color1);
+    transition: color 2s 0s;
+}
+
+.circulo{
+    width: 100px;
+    height: 100px;
+    background-color: var(--color2);
+    border-radius: 50%;
+    animation-name: movimiento;
+    border: 1px solid #000;
+    animation-name: movimiento;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+}
+ .circulo:hover {
+    animation-play-state: paused;
+ }
+
+@keyframes movimiento{
+    0% {
+        background-color: var(--color3);
+        /* transform: translateX(0px); */
+        transform: translate(0vw, 0vh);
+    }
+    25% {
+        transform: translate(0vw, 25vh);
+    }
+    50% {
+        background-color: var(--color2);
+        transform: translate(25vw, 25vh);
+    }
+    100% {
+        background-color: var(--color1);
+        transform: translate(80vw, 80vh);
+    }
+}
